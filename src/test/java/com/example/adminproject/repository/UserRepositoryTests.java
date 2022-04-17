@@ -24,15 +24,22 @@ public class UserRepositoryTests extends AdminProjectApplicationTests {
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime unregisteredAt = LocalDateTime.now();
 
-        User user = new User();
+//        User user = new User();
 
-        user.setAccount(account);
-        user.setPassword(password);
-        user.setStatus(status);
-        user.setEmail(email);
-        user.setPhoneNumber(phoneNumber);
-        user.setRegisteredAt(registeredAt);
-        user.setUnregisteredAt(unregisteredAt);
+//        user.setAccount(account);
+//        user.setPassword(password);
+//        user.setStatus(status);
+//        user.setEmail(email);
+//        user.setPhoneNumber(phoneNumber);
+//        user.setRegisteredAt(registeredAt);
+//        user.setUnregisteredAt(unregisteredAt);
+
+        User user = User.builder()
+                .account(account)
+                .password(password)
+                .status(status)
+                .email(email)
+                .build();
 
         User newUser = userRepository.save(user);
 

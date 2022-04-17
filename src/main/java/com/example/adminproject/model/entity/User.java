@@ -1,9 +1,7 @@
 package com.example.adminproject.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -20,6 +18,8 @@ import java.util.List;
 @Data
 @ToString(exclude = {"orderGroupList"})  // 상호참조시 연관관계 방지 위해
 @EntityListeners(AuditingEntityListener.class)
+@Builder
+@Accessors(chain = true)  // chain 패턴
 public class User {
 
     @Id

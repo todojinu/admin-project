@@ -1,8 +1,10 @@
 package com.example.adminproject.model.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -18,6 +20,8 @@ import java.time.LocalDateTime;
 @Data
 // JPA 에서 엔티티 객체의 변경을 감지하는 리스너를 설정. AuditingEntityListener 가 객체의 생성,변경의 감시를 수행
 @EntityListeners(AuditingEntityListener.class)
+@Builder
+@Accessors(chain = true)
 public class AdminUser {
 
     @Id
