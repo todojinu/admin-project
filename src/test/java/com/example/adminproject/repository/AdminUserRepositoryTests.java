@@ -26,12 +26,15 @@ public class AdminUserRepositoryTests extends AdminProjectApplicationTests {
         adminUser.setLoginFailCount(0);
         adminUser.setRegisteredAt(LocalDateTime.now());
         adminUser.setUnregisteredAt(LocalDateTime.now());
-        adminUser.setCreatedAt(LocalDateTime.now());
-        adminUser.setCreatedBy("AdminServer");
-        adminUser.setUpdatedAt(LocalDateTime.now());
-        adminUser.setUpdatedBy("AdminServer");
+//        adminUser.setCreatedAt(LocalDateTime.now());
+//        adminUser.setCreatedBy("AdminServer");
+//        adminUser.setUpdatedAt(LocalDateTime.now());
+//        adminUser.setUpdatedBy("AdminServer");
 
         AdminUser newAdminUser = adminUserRepository.save(adminUser);
         assert newAdminUser != null;
+
+        newAdminUser.setAccount("CHANGED");
+        adminUserRepository.save(newAdminUser);
     }
 }

@@ -16,17 +16,13 @@ public class UserRepositoryTests extends AdminProjectApplicationTests {
 
     @Test
     public void create() {
-        String account = "Test01";
-        String password = "Test01";
+        String account = "Test03";
+        String password = "Test03";
         String status = "REGISTERED";
-        String email = "Test01@gmail.com";
-        String phoneNumber = "010-1111-2222";
+        String email = "Test03@gmail.com";
+        String phoneNumber = "010-1111-3333";
         LocalDateTime registeredAt = LocalDateTime.now();
         LocalDateTime unregisteredAt = LocalDateTime.now();
-        LocalDateTime createdAt = LocalDateTime.now();
-        String createdBy = "AdminServer";
-        LocalDateTime updatedAt = LocalDateTime.now();
-        String updatedBy = "AdminServer";
 
         User user = new User();
 
@@ -37,10 +33,6 @@ public class UserRepositoryTests extends AdminProjectApplicationTests {
         user.setPhoneNumber(phoneNumber);
         user.setRegisteredAt(registeredAt);
         user.setUnregisteredAt(unregisteredAt);
-        user.setCreatedAt(createdAt);
-        user.setCreatedBy(createdBy);
-        user.setUpdatedAt(updatedAt);
-        user.setUpdatedBy(updatedBy);
 
         User newUser = userRepository.save(user);
 
